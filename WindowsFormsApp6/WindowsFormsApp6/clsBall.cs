@@ -48,6 +48,8 @@ namespace WindowsFormsApp6
             {
                 return mintXBall;
             }
+            set
+            { mintXBall = value; }
         }
         public int intYK   //property
         {
@@ -55,6 +57,7 @@ namespace WindowsFormsApp6
             {
                 return mintYBall;
             }
+            set { mintYBall = value; }
         }
         public int intWK   //property
         {
@@ -62,6 +65,7 @@ namespace WindowsFormsApp6
             {
                 return mintRBall;
             }
+            
         }
         public int intHK   //property
         {

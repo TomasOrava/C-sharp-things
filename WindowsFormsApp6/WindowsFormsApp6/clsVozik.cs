@@ -19,7 +19,16 @@ namespace WindowsFormsApp6
         //----------------------------
         //Constructor
         //----------------------------
-        public int intXVozik   
+        
+        public clsVozik(Graphics objCanvas, int intXVozik, int intYVozik, int intSirkaVozik, int intVyskaVozik)
+        {
+            mobjGrafika = objCanvas;
+            mintXVozik = intXVozik;
+            mintYVozik = intYVozik;
+            mintVyskaVozik = intVyskaVozik;
+            mintSirkaVozik = intSirkaVozik;
+        }
+        public int intXVozik
         {
             get
             {
@@ -27,9 +36,9 @@ namespace WindowsFormsApp6
             }
             set
             {
-                 mintXVozik = value;           //s value je to public
+                mintXVozik = value;           //s value je to public
             }
-            
+
         }
         public int intYVozik
         {
@@ -45,15 +54,7 @@ namespace WindowsFormsApp6
                 return mintSirkaVozik;
             }
         }
-        public clsVozik(Graphics objCanvas, int intXVozik, int intYVozik, int intSirkaVozik, int intVyskaVozik)
-        {
-            mobjGrafika = objCanvas;
-            mintXVozik = intXVozik;
-            mintYVozik = intYVozik;
-            mintVyskaVozik = intVyskaVozik;
-            mintSirkaVozik = intSirkaVozik;
-        }
-        
+
         public void NakresliSe()
         {
            

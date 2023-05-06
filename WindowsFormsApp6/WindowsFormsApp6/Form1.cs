@@ -26,7 +26,7 @@ namespace WindowsFormsApp6
 
         //kulička
         int mintXKulicky, mintYKulicky;
-        int mintPohybX, mintPohybY;
+        //int mintPohybX, mintPohybY;
        
         //poloměr jako konstanta
         const int mintRKulicky = 10;
@@ -64,11 +64,11 @@ namespace WindowsFormsApp6
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Left)
+            if(e.KeyCode == Keys.A)
             {
                 goLeft = true;
             }
-            if (e.KeyCode == Keys.Right)
+            if (e.KeyCode == Keys.D)
             {
                 goRight = true;
             }
@@ -82,16 +82,15 @@ namespace WindowsFormsApp6
 
             InitializeComponent();
             //innit proměnných
+            //Create of ball
+            mobjBall = new clsBall(mobjGrafika);
             mobjGrafika = pbCanvas.CreateGraphics();
             mintXKulicky = pbCanvas.Width/2;
             mintYKulicky = pbCanvas.Height/2;
-            mintPohybX = mintRychlostPosunu;
-            mintPohybY = mintRychlostPosunu;
+          
          
 
 
-            //Create of ball
-            mobjBall = new clsBall(mobjGrafika);
 
             //init of variables
             mobjBall.BallSetToCenter(mobjGrafika);
@@ -149,8 +148,8 @@ namespace WindowsFormsApp6
             //vykreslení kuličky
             mobjGrafika.FillEllipse(Brushes.Black, mintXKulicky, mintYKulicky, mintRKulicky, mintRKulicky);
             //posun
-            mintXKulicky += mintPohybX;
-            mintYKulicky += mintPohybY;
+            mobjBall.intXK += mobjBall.mintVectorX;
+            mobjBall.intYK += mobjBall.mintVectorY;
 
             //vykreslení voziku 
             mobjVozik.NakresliSe();
@@ -159,17 +158,17 @@ namespace WindowsFormsApp6
             // mobjGrafika.FillRectangle(Brushes.Blue, )
 
             //test kulize na hranách, změna pohybu  - minus 1 
-            if (((mintYKulicky + mintRKulicky) > pbCanvas.Height) ||
-                (mintYKulicky < 0))
+            if (((mobjBall.intYK + mintRKulicky) > pbCanvas.Height) ||
+                (mobjBall.intYK < 0))
             {
-                mintPohybY = mintPohybY * (-1);
+                mobjBall.mintVectorX = mobjBall.mintVectorY * (-1);
             }
              
       
-            if (((mintXKulicky + mintRKulicky) > pbCanvas.Width) ||
-                (mintXKulicky < 0))
+            if (((mobjBall.intXK + mintRKulicky) > pbCanvas.Width) ||
+                (mobjBall.intXK < 0))
             {
-                mintPohybX = mintPohybX * (-1);
+                mobjBall.mintVectorX = mobjBall.mintVectorY * (-1);
             }
             // vykreslení cihel - nepouživám
             //for (int i = 0; i < mintPocetCihel; i++)  //clsBrick objBrick in mobjBrick
@@ -191,11 +190,11 @@ namespace WindowsFormsApp6
             }
                 
             
-            if (goLeft == true && mobjVozik.intXVozik + mobjVozik.intSirkaVozik > 0)
+            if (goLeft == true && mobjVozik.intXVozik > 0)
             {
                 mobjVozik.intXVozik -= mintRychlostPosunuVozik;
             }
-            if (goRight == true && mobjVozik.intXVozik +mobjVozik.intSirkaVozik < 700)
+            if (goRight == true && mobjVozik.intXVozik +mobjVozik.intSirkaVozik < pbCanvas.Width)
             {
                 mobjVozik.intXVozik += mintRychlostPosunuVozik;
             }
