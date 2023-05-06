@@ -12,9 +12,7 @@ namespace WindowsFormsApp6
 {
     public partial class Form1 : Form
     {
-        //Variables
-
-        int lintX, lintY;
+        
         
         
 
@@ -24,13 +22,8 @@ namespace WindowsFormsApp6
         //grafika pro kereslení 
         Graphics mobjGrafika;
 
-        //kulička
-        int mintXKulicky, mintYKulicky;
-        //int mintPohybX, mintPohybY;
-       
-        //poloměr jako konstanta
-        const int mintRKulicky = 10;
-        const int mintRychlostPosunu = 3;
+        
+        
 
         //pole cihel 
         int mintPocetCihel;
@@ -85,10 +78,11 @@ namespace WindowsFormsApp6
             //Create of ball
             mobjBall = new clsBall(mobjGrafika);
             mobjGrafika = pbCanvas.CreateGraphics();
-            mintXKulicky = pbCanvas.Width/2;
-            mintYKulicky = pbCanvas.Height/2;
-          
-         
+           
+
+            //Variables
+
+            int lintX, lintY;
 
 
 
@@ -145,11 +139,8 @@ namespace WindowsFormsApp6
         {
             //smazání scény
             mobjGrafika.Clear(Color.White);
-            //vykreslení kuličky
-            mobjGrafika.FillEllipse(Brushes.Black, mintXKulicky, mintYKulicky, mintRKulicky, mintRKulicky);
-            //posun
-            mobjBall.intXK += mobjBall.mintVectorX;
-            mobjBall.intYK += mobjBall.mintVectorY;
+            
+            
 
             //vykreslení voziku 
             mobjVozik.NakresliSe();
@@ -158,25 +149,16 @@ namespace WindowsFormsApp6
             // mobjGrafika.FillRectangle(Brushes.Blue, )
 
             //test kulize na hranách, změna pohybu  - minus 1 
-            if (((mobjBall.intYK + mintRKulicky) > pbCanvas.Height) ||
-                (mobjBall.intYK < 0))
-            {
-                mobjBall.mintVectorX = mobjBall.mintVectorY * (-1);
-            }
-             
-      
-            if (((mobjBall.intXK + mintRKulicky) > pbCanvas.Width) ||
-                (mobjBall.intXK < 0))
-            {
-                mobjBall.mintVectorX = mobjBall.mintVectorY * (-1);
-            }
+
             // vykreslení cihel - nepouživám
             //for (int i = 0; i < mintPocetCihel; i++)  //clsBrick objBrick in mobjBrick
 
             // {
             //    mobjBrick[i].NakresliSe();
             // }
-           
+            //vyvolání vectora
+            mobjBall.Vector(mobjGrafika);
+
 
                 //druhá možnost: foreach(ClsCihla objCihla in mobjCihla)
                 //{objCihla.NakresliSe();}

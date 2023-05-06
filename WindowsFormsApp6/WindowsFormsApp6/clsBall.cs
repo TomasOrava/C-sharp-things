@@ -104,11 +104,11 @@ namespace WindowsFormsApp6
             mintYBall += mintVectorY;
 
             //Collision on borders of pbCanvas
-            if (mintYBall + mintRBall >= (int)objCanvas.ClipBounds.Height || mintYBall <= 0)
+            if (mintYBall + mintRBall >= (int)objCanvas.VisibleClipBounds.Height || mintYBall <= 0)
             {
                 mintVectorY = mintVectorY * (-1);
             }
-            else if (mintXBall + mintRBall >= (int)objCanvas.ClipBounds.Width || mintXBall <= 0)
+            else if (mintXBall + mintRBall >= (int)objCanvas.VisibleClipBounds.Width || mintXBall <= 0)
             {
                 mintVectorX = mintVectorX * (-1);
             }
