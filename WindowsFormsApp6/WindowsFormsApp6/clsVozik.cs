@@ -54,6 +54,13 @@ namespace WindowsFormsApp6
                 return mintSirkaVozik;
             }
         }
+        public int intVyskaVozik
+        {
+            get
+            {
+                return mintVyskaVozik;
+            }
+        }
 
         public void NakresliSe()
         {

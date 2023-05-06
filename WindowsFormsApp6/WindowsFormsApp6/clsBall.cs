@@ -26,7 +26,9 @@ namespace WindowsFormsApp6
         public int mintVectorX, mintVectorY;
         const int mintRBall = 10;
         const int mintShiftSpeed = 5;
-        const int mintRychlostPosunu = 15;
+        const int mintRychlostPosunu = 5;
+
+        
 
         //----------------------------
         //Constructor
@@ -118,7 +120,23 @@ namespace WindowsFormsApp6
             mintVectorX = mintShiftSpeed;
             mintVectorY = mintShiftSpeed;
         }
+        public bool TestkolizeVozik(int intXVozik, int intYVozik, int intWVozik, int intHVozik)
+        {
+         Rectangle rectangleBall = new Rectangle(mintXBall, mintYBall, mintRBall, mintRBall);
+      
+          Rectangle rectangleVozik = new Rectangle(intXVozik, intYVozik, intWVozik, intHVozik);
+            if (rectangleBall.IntersectsWith(rectangleVozik))
+            {
+                mintVectorY = mintVectorY * (-1);
+                mintVectorX = mintVectorX * (-1);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
 
+        }
 
     }
    

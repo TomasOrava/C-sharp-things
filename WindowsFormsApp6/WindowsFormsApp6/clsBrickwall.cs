@@ -20,7 +20,7 @@ namespace WindowsFormsApp6
         int mintXCihly, mintYCihly;
         int mintVyskaCihly, mintSirkaCihly;
         bool mblJeVidet;
-
+        public Boolean blBrickAndBall;
         //----------------------------
         //Constructor
         //----------------------------
@@ -33,7 +33,7 @@ namespace WindowsFormsApp6
             mintVyskaCihly =  VyskaBrick;
             mintSirkaCihly =  mintSirkaBrick;
             mblJeVidet = true;
-          
+           
         }
         public void NakresliSe()
         {
@@ -62,6 +62,7 @@ namespace WindowsFormsApp6
             {
                 //cihla už není vidět 
                 mblJeVidet = false;
+                blBrickAndBall = true;
                 return true;
             }
             else

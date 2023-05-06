@@ -75,9 +75,10 @@ namespace WindowsFormsApp6
 
             InitializeComponent();
             //innit proměnných
+            mobjGrafika = pbCanvas.CreateGraphics();
             //Create of ball
             mobjBall = new clsBall(mobjGrafika);
-            mobjGrafika = pbCanvas.CreateGraphics();
+           
            
 
             //Variables
@@ -87,7 +88,7 @@ namespace WindowsFormsApp6
 
 
             //init of variables
-            mobjBall.BallSetToCenter(mobjGrafika);
+            mobjBall.Vector(mobjGrafika);
             //btStartGame.Visible = true;
             //vytvoření pole
             mintPocetCihel = mintPocetRadCihel *
@@ -169,6 +170,13 @@ namespace WindowsFormsApp6
             {
                 objBrick.TestKolize(mobjBall.intXK, mobjBall.intYK, mobjBall.intWK, mobjBall.intHK);
                 objBrick.NakresliSe();
+              if(  objBrick.blBrickAndBall == true)
+                {
+                    objBrick.blBrickAndBall = false;
+                    mobjBall.mintVectorX = mobjBall.mintVectorX * (-1);
+                    mobjBall.mintVectorY = mobjBall.mintVectorY * (-1);
+
+                }
             }
                 
             
@@ -180,8 +188,10 @@ namespace WindowsFormsApp6
             {
                 mobjVozik.intXVozik += mintRychlostPosunuVozik;
             }
+            //test kolize odraz míče od voziku 
+            mobjBall.TestkolizeVozik( mobjVozik.intXVozik, mobjVozik.intYVozik, mobjVozik.intSirkaVozik, mobjVozik.intVyskaVozik);
            
-            
+
         }
     }
 }
