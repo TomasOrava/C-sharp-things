@@ -15,11 +15,36 @@ namespace WindowsFormsApp6
         // Brick variables
         int mintXVozik, mintYVozik;
         int mintVyskaVozik, mintSirkaVozik;
-       
+
         //----------------------------
         //Constructor
         //----------------------------
-
+        public int intXVozik   
+        {
+            get
+            {
+                return mintXVozik;
+            }
+            set
+            {
+                 mintXVozik = value;           //s value je to public
+            }
+            
+        }
+        public int intYVozik
+        {
+            get
+            {
+                return mintYVozik;
+            }
+        }
+        public int intSirkaVozik
+        {
+            get
+            {
+                return mintSirkaVozik;
+            }
+        }
         public clsVozik(Graphics objCanvas, int intXVozik, int intYVozik, int intSirkaVozik, int intVyskaVozik)
         {
             mobjGrafika = objCanvas;
@@ -28,12 +53,13 @@ namespace WindowsFormsApp6
             mintVyskaVozik = intVyskaVozik;
             mintSirkaVozik = intSirkaVozik;
         }
+        
         public void NakresliSe()
         {
            
             //vykreslení
             mobjGrafika.FillRectangle(Brushes.Blue,mintXVozik, mintYVozik, mintSirkaVozik, mintVyskaVozik);
-
+            
         }
     }
     

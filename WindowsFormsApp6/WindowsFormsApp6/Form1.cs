@@ -15,7 +15,7 @@ namespace WindowsFormsApp6
         //Variables
 
         int lintX, lintY;
-
+        
         
 
         // Class of ball
@@ -43,20 +43,20 @@ namespace WindowsFormsApp6
         //classa vozik
         clsVozik mobjVozik;
         //vozik proměnný 
-        const int mintXVozik = 350, mintYVozik =400;
+        int mintXVozik = 350, mintYVozik =400;
 
         //vozík proměnné posun
         bool goRight, goLeft;
-        const int mintRchlostPosunuVozik = 5;
+        const int mintRychlostPosunuVozik = 5;
         const int mintVyskaVozik = 15, mintSirkaVozik = 70;
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Left)
+            if (e.KeyCode == Keys.A)
             {
                 goLeft = false;
             }
-            if (e.KeyCode == Keys.Right)
+            if (e.KeyCode == Keys.D)
             {
                 goRight = false;
             }
@@ -95,7 +95,7 @@ namespace WindowsFormsApp6
 
             //init of variables
             mobjBall.BallSetToCenter(mobjGrafika);
-            btStartGame.Visible = true;
+            //btStartGame.Visible = true;
             //vytvoření pole
             mintPocetCihel = mintPocetRadCihel *
                 ((pbCanvas.Width -mintVelikostMezery) /
@@ -132,6 +132,9 @@ namespace WindowsFormsApp6
             //innit timeru
             tmrPrekreslit.Interval = mintRychlostTimeru;
             tmrPrekreslit.Start();
+            btExit.TabStop = false;
+           // btStartGame.TabStop = false;
+
         }
 
         private void btExit_Click(object sender, EventArgs e)
@@ -153,7 +156,7 @@ namespace WindowsFormsApp6
             mobjVozik.NakresliSe();
 
 
-            
+            // mobjGrafika.FillRectangle(Brushes.Blue, )
 
             //test kulize na hranách, změna pohybu  - minus 1 
             if (((mintYKulicky + mintRKulicky) > pbCanvas.Height) ||
@@ -179,27 +182,25 @@ namespace WindowsFormsApp6
                 //druhá možnost: foreach(ClsCihla objCihla in mobjCihla)
                 //{objCihla.NakresliSe();}
 
-                // test kolize všech cihel 
+                // test kolize všech cihel a vykreslení cihel 
                 foreach (clsBrick objBrick in mobjBrick) 
 
             {
                 objBrick.TestKolize(mobjBall.intXK, mobjBall.intYK, mobjBall.intWK, mobjBall.intHK);
-            }
-                //vykreslení všech cihel
-            foreach (clsBrick objBrick in mobjBrick)
-            {
                 objBrick.NakresliSe();
             }
-            if (goLeft == true && mobjVozik.Left > 0)
+                
+            
+            if (goLeft == true && mobjVozik.intXVozik + mobjVozik.intSirkaVozik > 0)
             {
-                player.Left -= mintRchlostPosunuVozik;
+                mobjVozik.intXVozik -= mintRychlostPosunuVozik;
             }
-            if (goRight == true && player.Left < 700)
+            if (goRight == true && mobjVozik.intXVozik +mobjVozik.intSirkaVozik < 700)
             {
-                player.Left += mintRchlostPosunuVozik;
+                mobjVozik.intXVozik += mintRychlostPosunuVozik;
             }
            
-            }
+            
         }
     }
 }
