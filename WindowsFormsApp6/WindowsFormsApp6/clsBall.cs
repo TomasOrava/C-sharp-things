@@ -27,7 +27,7 @@ namespace WindowsFormsApp6
         const int mintRBall = 10;
         const int mintShiftSpeed = 5;
         const int mintRychlostPosunu = 5;
-
+        public Boolean blSpodniHranaMic = false;
         
 
         //----------------------------
@@ -105,7 +105,7 @@ namespace WindowsFormsApp6
             mintXBall += mintVectorX;
             mintYBall += mintVectorY;
 
-            //Collision on borders of pbCanvas
+            //koliza hran pbCanvasu - odraz
             if (mintYBall + mintRBall >= (int)objCanvas.VisibleClipBounds.Height || mintYBall <= 0)
             {
                 mintVectorY = mintVectorY * (-1);
@@ -113,6 +113,11 @@ namespace WindowsFormsApp6
             else if (mintXBall + mintRBall >= (int)objCanvas.VisibleClipBounds.Width || mintXBall <= 0)
             {
                 mintVectorX = mintVectorX * (-1);
+            }
+            //podmínka pro spodní hranu 
+            if (mintYBall + mintRBall >= (int)objCanvas.VisibleClipBounds.Height )
+            {
+                blSpodniHranaMic = true;
             }
         }
         public void StartOfTheBall()

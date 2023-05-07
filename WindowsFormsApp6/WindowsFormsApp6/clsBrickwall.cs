@@ -19,7 +19,7 @@ namespace WindowsFormsApp6
         // Brick variables
         int mintXCihly, mintYCihly;
         int mintVyskaCihly, mintSirkaCihly;
-        bool mblJeVidet;
+       public bool mblJeVidet;
         public Boolean blBrickAndBall;
         //----------------------------
         //Constructor
@@ -62,6 +62,7 @@ namespace WindowsFormsApp6
             {
                 //cihla už není vidět 
                 mblJeVidet = false;
+                //proměnná blBrickAndBall - použivaní ve formu 1 - pro odraz míče od cihly
                 blBrickAndBall = true;
                 return true;
             }

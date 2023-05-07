@@ -40,9 +40,12 @@ namespace WindowsFormsApp6
 
         //vozík proměnné posun
         bool goRight, goLeft;
-        const int mintRychlostPosunuVozik = 5;
+        const int mintRychlostPosunuVozik = 8;
         const int mintVyskaVozik = 15, mintSirkaVozik = 70;
+        //vytvoření messegaboxu pro výhru a  prohru
 
+
+        //eventy key up a key down, klávesy A , D 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.A)
@@ -170,15 +173,22 @@ namespace WindowsFormsApp6
             {
                 objBrick.TestKolize(mobjBall.intXK, mobjBall.intYK, mobjBall.intWK, mobjBall.intHK);
                 objBrick.NakresliSe();
+                // odraz kulicky od voziku
               if(  objBrick.blBrickAndBall == true)
                 {
                     objBrick.blBrickAndBall = false;
-                    mobjBall.mintVectorX = mobjBall.mintVectorX * (-1);
+                   // mobjBall.mintVectorX = mobjBall.mintVectorX * (-1);
                     mobjBall.mintVectorY = mobjBall.mintVectorY * (-1);
 
                 }
+                // message box výhra
+                if (objBrick.mblJeVidet == true)
+                {
+                    MessageBox.Show("You have won!!!");
+                }
             }
-                
+               
+            // pohyb voziku 
             
             if (goLeft == true && mobjVozik.intXVozik > 0)
             {
@@ -188,9 +198,14 @@ namespace WindowsFormsApp6
             {
                 mobjVozik.intXVozik += mintRychlostPosunuVozik;
             }
-            //test kolize odraz míče od voziku 
+            //test kolize odrazu míče od voziku 
             mobjBall.TestkolizeVozik( mobjVozik.intXVozik, mobjVozik.intYVozik, mobjVozik.intSirkaVozik, mobjVozik.intVyskaVozik);
            
+            //messega box pro prohru 
+            if (mobjBall.blSpodniHranaMic == true)
+            {
+                MessageBox.Show("You have lost:(");
+            }
 
         }
     }
