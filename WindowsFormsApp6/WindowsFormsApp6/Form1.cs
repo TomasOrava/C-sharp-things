@@ -12,8 +12,8 @@ namespace WindowsFormsApp6
 {
     public partial class Form1 : Form
     {
-        
-        
+      
+      
         
 
         // Class of ball
@@ -42,7 +42,8 @@ namespace WindowsFormsApp6
         bool goRight, goLeft;
         const int mintRychlostPosunuVozik = 8;
         const int mintVyskaVozik = 15, mintSirkaVozik = 70;
-        //vytvoření messegaboxu pro výhru a  prohru
+
+       
 
 
         //eventy key up a key down, klávesy A , D 
@@ -58,6 +59,19 @@ namespace WindowsFormsApp6
             }
         }
 
+        private void retryToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            mobjBall.BallSetToCenter(mobjGrafika); // míč zpět na střed
+            //vykreslení všech cihel na novou hru 
+            foreach (clsBrick objBrick in mobjBrick)
+
+            {
+                objBrick.TestKolize(mobjBall.intXK, mobjBall.intYK, mobjBall.intWK, mobjBall.intHK);
+                objBrick.NakresliSe();
+
+            }
+
+        }
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.A)
@@ -177,13 +191,14 @@ namespace WindowsFormsApp6
               if(  objBrick.blBrickAndBall == true)
                 {
                     objBrick.blBrickAndBall = false;
-                   // mobjBall.mintVectorX = mobjBall.mintVectorX * (-1);
+                   mobjBall.mintVectorX = mobjBall.mintVectorX * (-1) ;
                     mobjBall.mintVectorY = mobjBall.mintVectorY * (-1);
 
                 }
-                // message box výhra
-                if (objBrick.mblJeVidet == true)
+                // message box výhra - podmínka
+                if (objBrick.mblJeVidet == false)
                 {
+                    tmrPrekreslit.Stop();
                     MessageBox.Show("You have won!!!");
                 }
             }
@@ -201,10 +216,18 @@ namespace WindowsFormsApp6
             //test kolize odrazu míče od voziku 
             mobjBall.TestkolizeVozik( mobjVozik.intXVozik, mobjVozik.intYVozik, mobjVozik.intSirkaVozik, mobjVozik.intVyskaVozik);
            
-            //messega box pro prohru 
-            if (mobjBall.blSpodniHranaMic == true)
+            //message box pro prohru ------------nepoužívám- nefunguje
+           // if (mobjBall.blSpodniHranaMic == true)
+            //{
+           //     MessageBox.Show("You have lost:(");
+            //    
+           // }
+           //nový messagebox pro prohru 
+            if (mobjBall.intYK > mobjVozik.intYVozik)
             {
-                MessageBox.Show("You have lost:(");
+                tmrPrekreslit.Stop();
+                MessageBox.Show("You have lost  :(");
+                
             }
 
         }

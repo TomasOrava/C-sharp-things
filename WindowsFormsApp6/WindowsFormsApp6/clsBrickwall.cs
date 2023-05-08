@@ -12,15 +12,16 @@ namespace WindowsFormsApp6
         //Variables
 
        
-
+        
         //Graphics
         Graphics mobjGrafika;
-
+       
         // Brick variables
         int mintXCihly, mintYCihly;
         int mintVyskaCihly, mintSirkaCihly;
        public bool mblJeVidet;
-        public Boolean blBrickAndBall;
+        public Boolean blBrickAndBall; //proměnná pro odraz míče
+        
         //----------------------------
         //Constructor
         //----------------------------
@@ -41,7 +42,7 @@ namespace WindowsFormsApp6
             if (mblJeVidet == false) return;
             
 
-            //vykreslení
+            //vykreslení cihly
             mobjGrafika.FillRectangle(Brushes.Orange, mintXCihly, mintYCihly, mintSirkaCihly, mintVyskaCihly);
             
         }

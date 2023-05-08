@@ -25,9 +25,9 @@ namespace WindowsFormsApp6
         
         public int mintVectorX, mintVectorY;
         const int mintRBall = 10;
-        const int mintShiftSpeed = 5;
-        const int mintRychlostPosunu = 5;
-        public Boolean blSpodniHranaMic = false;
+        const int mintShiftSpeed = 4;
+        const int mintRychlostPosunu = 4;
+        public bool blSpodniHranaMic = false;
         
 
         //----------------------------
@@ -115,7 +115,7 @@ namespace WindowsFormsApp6
                 mintVectorX = mintVectorX * (-1);
             }
             //podmínka pro spodní hranu 
-            if (mintYBall + mintRBall >= (int)objCanvas.VisibleClipBounds.Height )
+            else if (mintYBall + mintRBall >= (int)objCanvas.VisibleClipBounds.Height )
             {
                 blSpodniHranaMic = true;
             }
