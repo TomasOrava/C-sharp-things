@@ -62,7 +62,7 @@ namespace WindowsFormsApp6
         //----------------------------
         public bool TestKolize(int intXK, int intYK, int intWK, int intHK)// proměnné kuličky
         {
-            Rectangle rectangleBall = new Rectangle(intXK, intYK, intWK, intHK);
+           Rectangle rectangleBall = new Rectangle(intXK, intYK, intWK, intHK);
             Rectangle rectangleBrick = new Rectangle(mintXCihly, mintYCihly,mintSirkaCihly, mintVyskaCihly);
             //test viditelnosti cihel 
             if (mblJeVidet == false) return false;
@@ -78,7 +78,7 @@ namespace WindowsFormsApp6
                 blBrickAndBall = true;
                 
 
-                return true;
+               return true;
                
             }
             else
@@ -86,8 +86,10 @@ namespace WindowsFormsApp6
                 return false;
             }
             
+             
            
         }
+
         
     }
 }

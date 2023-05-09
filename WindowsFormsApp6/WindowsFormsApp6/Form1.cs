@@ -110,9 +110,10 @@ namespace WindowsFormsApp6
             mobjBall.Vector(mobjGrafika);
             //btStartGame.Visible = true;
             //vytvoření pole
-            mintPocetCihel = mintPocetRadCihel *
-                ((pbCanvas.Width -mintVelikostMezery) /
-                (mintSirkaCihly + mintVelikostMezery));
+            //mintPocetCihel = mintPocetRadCihel *
+            //  ((pbCanvas.Width -mintVelikostMezery) /
+            //(mintSirkaCihly + mintVelikostMezery));
+            mintPocetCihel = 1;
 
 
             mobjBrick = new clsBrick[mintPocetCihel];
@@ -201,9 +202,10 @@ namespace WindowsFormsApp6
               if (objBrick.blPocetKolize == true)
                 {
                     mintPocetKolize += 1;
+                    objBrick.blPocetKolize = false;
                 }
                 // message box výhra - podmínka
-                if (mintPocetKolize == 7)
+                if (mintPocetKolize == mintPocetCihel)
                 {
 
                     mintPocetKolize = 0;
