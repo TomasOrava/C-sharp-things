@@ -29,7 +29,7 @@ namespace WindowsFormsApp6
         int mintPocetCihel;
         clsBrick[] mobjBrick;
         const int mintSirkaCihly = 80, mintVyskaCihly = 20;
-        const int mintVelikostMezery = 20, mintPocetRadCihel = 3;
+        const int mintVelikostMezery = 20, mintPocetRadCihel = 1;
 
         //Timer
         const int mintRychlostTimeru = 10;
@@ -42,7 +42,8 @@ namespace WindowsFormsApp6
         bool goRight, goLeft;
         const int mintRychlostPosunuVozik = 8;
         const int mintVyskaVozik = 15, mintSirkaVozik = 70;
-
+        //proměnné pro počet kolizí - míče a cihly 
+        int mintPocetKolize = 0;
        
 
 
@@ -62,8 +63,9 @@ namespace WindowsFormsApp6
         private void retryToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             mobjBall.BallSetToCenter(mobjGrafika); // míč zpět na střed
+            //nastavení počtu kolizí na nulu 
             //vykreslení všech cihel na novou hru 
-            foreach (clsBrick objBrick in mobjBrick)
+                        foreach (clsBrick objBrick in mobjBrick)
 
             {
                 objBrick.TestKolize(mobjBall.intXK, mobjBall.intYK, mobjBall.intWK, mobjBall.intHK);
@@ -195,11 +197,20 @@ namespace WindowsFormsApp6
                     mobjBall.mintVectorY = mobjBall.mintVectorY * (-1);
 
                 }
-                // message box výhra - podmínka
-                if (objBrick.mblJeVidet == false)
+              //podmínka když se dotkne míč cihly přičte se hodnota 1
+              if (objBrick.blPocetKolize == true)
                 {
+                    mintPocetKolize += 1;
+                }
+                // message box výhra - podmínka
+                if (mintPocetKolize == 7)
+                {
+
+                    mintPocetKolize = 0;
+
                     tmrPrekreslit.Stop();
                     MessageBox.Show("You have won!!!");
+                   
                 }
             }
                
@@ -223,12 +234,12 @@ namespace WindowsFormsApp6
             //    
            // }
            //nový messagebox pro prohru 
-            if (mobjBall.intYK > mobjVozik.intYVozik)
-            {
-                tmrPrekreslit.Stop();
-                MessageBox.Show("You have lost  :(");
+           // if (mobjBall.intYK > mobjVozik.intYVozik)
+           // {
+            //    tmrPrekreslit.Stop();
+            //    MessageBox.Show("You have lost  :(");
                 
-            }
+            //}
 
         }
     }

@@ -21,10 +21,19 @@ namespace WindowsFormsApp6
         int mintVyskaCihly, mintSirkaCihly;
        public bool mblJeVidet;
         public Boolean blBrickAndBall; //proměnná pro odraz míče
+        //proměnné pro počet kolizí míče s cihlou a dodatečná pro vyvolání ve formu 1
+        public Boolean blPocetKolize ;
+      
         
+       
+
         //----------------------------
         //Constructor
         //----------------------------
+       
+        
+            
+            
 
         public clsBrick(Graphics objCanvas, int intXBrick, int intYBrick, int mintSirkaBrick, int VyskaBrick )
         {
@@ -34,7 +43,7 @@ namespace WindowsFormsApp6
             mintVyskaCihly =  VyskaBrick;
             mintSirkaCihly =  mintSirkaBrick;
             mblJeVidet = true;
-           
+            
         }
         public void NakresliSe()
         {
@@ -61,18 +70,24 @@ namespace WindowsFormsApp6
             //test kolize
             if (rectangleBall.IntersectsWith(rectangleBrick))
             {
+                blPocetKolize = true;
+                
                 //cihla už není vidět 
                 mblJeVidet = false;
                 //proměnná blBrickAndBall - použivaní ve formu 1 - pro odraz míče od cihly
                 blBrickAndBall = true;
+                
+
                 return true;
+               
             }
             else
             {
                 return false;
             }
             
+           
         }
-
+        
     }
 }

@@ -26,7 +26,7 @@ namespace WindowsFormsApp6
         public int mintVectorX, mintVectorY;
         const int mintRBall = 10;
         const int mintShiftSpeed = 4;
-        const int mintRychlostPosunu = 4;
+        const int mintRychlostPosunu = 10;
         public bool blSpodniHranaMic = false;
         
 
