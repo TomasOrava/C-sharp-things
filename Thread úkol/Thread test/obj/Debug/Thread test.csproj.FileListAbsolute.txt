@@ -1,0 +1,33 @@
+C:\Users\oravatomas\source\repos\Thread test\Thread test\bin\Debug\Thread test.exe.config
+C:\Users\oravatomas\source\repos\Thread test\Thread test\bin\Debug\Thread test.exe
+C:\Users\oravatomas\source\repos\Thread test\Thread test\bin\Debug\Thread test.pdb
+C:\Users\oravatomas\source\repos\Thread test\Thread test\obj\Debug\Thread test.csproj.AssemblyReference.cache
+C:\Users\oravatomas\source\repos\Thread test\Thread test\obj\Debug\Thread test.csproj.SuggestedBindingRedirects.cache
+C:\Users\oravatomas\source\repos\Thread test\Thread test\obj\Debug\Thread_test.Form1.resources
+C:\Users\oravatomas\source\repos\Thread test\Thread test\obj\Debug\Thread_test.Properties.Resources.resources
+C:\Users\oravatomas\source\repos\Thread test\Thread test\obj\Debug\Thread test.csproj.GenerateResource.cache
+C:\Users\oravatomas\source\repos\Thread test\Thread test\obj\Debug\Thread test.csproj.CoreCompileInputs.cache
+C:\Users\oravatomas\source\repos\Thread test\Thread test\obj\Debug\Thread test.exe
+C:\Users\oravatomas\source\repos\Thread test\Thread test\obj\Debug\Thread test.pdb
+C:\Users\oravatomas\Desktop\Thread test\Thread test\bin\Debug\Thread test.exe.config
+C:\Users\oravatomas\Desktop\Thread test\Thread test\bin\Debug\Thread test.exe
+C:\Users\oravatomas\Desktop\Thread test\Thread test\bin\Debug\Thread test.pdb
+C:\Users\oravatomas\Desktop\Thread test\Thread test\obj\Debug\Thread test.csproj.AssemblyReference.cache
+C:\Users\oravatomas\Desktop\Thread test\Thread test\obj\Debug\Thread test.csproj.SuggestedBindingRedirects.cache
+C:\Users\oravatomas\Desktop\Thread test\Thread test\obj\Debug\Thread_test.Form1.resources
+C:\Users\oravatomas\Desktop\Thread test\Thread test\obj\Debug\Thread_test.Properties.Resources.resources
+C:\Users\oravatomas\Desktop\Thread test\Thread test\obj\Debug\Thread test.csproj.GenerateResource.cache
+C:\Users\oravatomas\Desktop\Thread test\Thread test\obj\Debug\Thread test.csproj.CoreCompileInputs.cache
+C:\Users\oravatomas\Desktop\Thread test\Thread test\obj\Debug\Thread test.exe
+C:\Users\oravatomas\Desktop\Thread test\Thread test\obj\Debug\Thread test.pdb
+C:\Users\tomas\OneDrive\Plocha\Thread test nový\Thread test\bin\Debug\Thread test.exe.config
+C:\Users\tomas\OneDrive\Plocha\Thread test nový\Thread test\bin\Debug\Thread test.exe
+C:\Users\tomas\OneDrive\Plocha\Thread test nový\Thread test\bin\Debug\Thread test.pdb
+C:\Users\tomas\OneDrive\Plocha\Thread test nový\Thread test\obj\Debug\Thread test.csproj.AssemblyReference.cache
+C:\Users\tomas\OneDrive\Plocha\Thread test nový\Thread test\obj\Debug\Thread test.csproj.SuggestedBindingRedirects.cache
+C:\Users\tomas\OneDrive\Plocha\Thread test nový\Thread test\obj\Debug\Thread_test.Form1.resources
+C:\Users\tomas\OneDrive\Plocha\Thread test nový\Thread test\obj\Debug\Thread_test.Properties.Resources.resources
+C:\Users\tomas\OneDrive\Plocha\Thread test nový\Thread test\obj\Debug\Thread test.csproj.GenerateResource.cache
+C:\Users\tomas\OneDrive\Plocha\Thread test nový\Thread test\obj\Debug\Thread test.csproj.CoreCompileInputs.cache
+C:\Users\tomas\OneDrive\Plocha\Thread test nový\Thread test\obj\Debug\Thread test.exe
+C:\Users\tomas\OneDrive\Plocha\Thread test nový\Thread test\obj\Debug\Thread test.pdb
